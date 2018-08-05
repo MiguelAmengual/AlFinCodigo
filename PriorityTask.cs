@@ -1,10 +1,10 @@
 using System;
 namespace AlFinCodigo
 {
-    public class PiorityTask : Task
+    public class PriorityTask : AbstractTask
     {
         private int priority;
-        public PiorityTask(string title, int priority) : base(title)
+        public PriorityTask(string title, int priority) : base(title)
         {
             this.Priority = priority;
         }

@@ -2,7 +2,7 @@ using System;
 namespace AlFinCodigo
 {
 
-    public class ScheduledTask : Task
+    public class ScheduledTask : AbstractTask
     {
 
         public ScheduledTask(string title, DateTime date) : base(title)
