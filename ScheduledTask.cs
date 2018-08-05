@@ -6,7 +6,11 @@ namespace AlFinCodigo
 
         public ScheduledTask(Task task, DateTime date) : base(task.Title, task.Description)
         {
+            if(date.Year != DateTime.Today.Year){
+                throw new ArgumentException("The year must be the current year");
+            }
             this.CreationDate = date;
+
         }
 
         public ScheduledTask(Task task) : base(task.Title, task.Description)

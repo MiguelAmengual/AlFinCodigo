@@ -6,9 +6,8 @@ namespace AlFinCodigo
     {
         static void Main(string[] args)
         {
-            ScheduledTaskAndNormalTaskTest();
         }
- 
+
         public static void Test1()
         {
             TaskList tl1 = new TaskList();
@@ -43,12 +42,27 @@ namespace AlFinCodigo
             Console.WriteLine(t1.ToString());
         }
 
-        public static void ScheduledTaskAndNormalTaskTest(){
+        public static void ScheduledTaskAndNormalTaskTest()
+        {
             TaskList tl1 = new TaskList();
-            tl1.AddNewTask(new ScheduledTask(new Task("t1","description 1"), DateTime.Today));
-            tl1.AddNewTask(new Task("T2","Description 2"));
-            tl1.AddNewTask(new ScheduledTask(new Task("t3","description 3")));
+            tl1.AddNewTask(new ScheduledTask(new Task("t1", "description 1"), DateTime.Today));
+            tl1.AddNewTask(new Task("T2", "Description 2"));
+            tl1.AddNewTask(new ScheduledTask(new Task("t3", "description 3")));
             tl1.AddNewTask(new ScheduledTask(new Task("t4")));
+            tl1.PrintAllTasks();
+        }
+
+        public static void CurrentYearTest()
+        {
+            TaskList tl1 = new TaskList();
+            try
+            {
+                tl1.AddNewTask(new ScheduledTask(new Task("t1", "description 1"), new DateTime(2016, 5, 2)));
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e);
+            }
             tl1.PrintAllTasks();
         }
     }
