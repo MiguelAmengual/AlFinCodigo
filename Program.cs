@@ -6,9 +6,9 @@ namespace AlFinCodigo
     {
         static void Main(string[] args)
         {
-            TruncateTest();
+            OptionalTaskDescription();
         }
-
+ 
         public static void Test1()
         {
             TaskList tl1 = new TaskList();
