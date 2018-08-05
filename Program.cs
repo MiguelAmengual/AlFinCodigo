@@ -6,6 +6,7 @@ namespace AlFinCodigo
     {
         static void Main(string[] args)
         {
+            SeveralTasks();
         }
 
         public static void Test1()
@@ -30,6 +31,7 @@ namespace AlFinCodigo
             tl1.PrintAllTasks();
         }
 
+
         public static void TruncateTest()
         {
             Task t1 = new Task("T1", "abcdefghijklmnopqrstuvwxyz");
@@ -45,10 +47,10 @@ namespace AlFinCodigo
         public static void ScheduledTaskAndNormalTaskTest()
         {
             TaskList tl1 = new TaskList();
-            tl1.AddNewTask(new ScheduledTask(new Task("t1", "description 1"), DateTime.Today));
+            tl1.AddNewTask(new ScheduledTask("t1", DateTime.Today));
             tl1.AddNewTask(new Task("T2", "Description 2"));
-            tl1.AddNewTask(new ScheduledTask(new Task("t3", "description 3")));
-            tl1.AddNewTask(new ScheduledTask(new Task("t4")));
+            tl1.AddNewTask(new ScheduledTask("t3"));
+            tl1.AddNewTask(new ScheduledTask("t4"));
             tl1.PrintAllTasks();
         }
 
@@ -57,12 +59,22 @@ namespace AlFinCodigo
             TaskList tl1 = new TaskList();
             try
             {
-                tl1.AddNewTask(new ScheduledTask(new Task("t1", "description 1"), new DateTime(2016, 5, 2)));
+                tl1.AddNewTask(new ScheduledTask("t1", new DateTime(2016, 5, 2)));
             }
             catch (ArgumentException e)
             {
                 Console.WriteLine(e);
             }
+            tl1.PrintAllTasks();
+        }
+
+        public static void SeveralTasks()
+        {
+            TaskList tl1 = new TaskList();
+            tl1.AddNewTask(new Task("T1","Description 1"));
+            tl1.AddNewTask(new PriorityTask("T1",999));
+            tl1.AddNewTask(new ScheduledTask("T3",new DateTime(2018,2,3)));
+            tl1.AddNewTask(new ScheduledTask("T4"));
             tl1.PrintAllTasks();
         }
     }
