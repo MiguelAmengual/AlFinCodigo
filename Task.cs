@@ -1,18 +1,14 @@
+using System;
 namespace AlFinCodigo
 {
-    public class Task
+    public class Task : AbstractTask
     {
         private string description;
-        public Task(string title, string description = "Without Description")
+        public Task(string title, string description = "Without Description") : base(title)
         {
-            this.Title = title;
             this.Description = description;
         }
-        public string Title
-        {
-            get;
-            private set;
-        }
+
         public string Description
         {
             get
@@ -36,7 +32,7 @@ namespace AlFinCodigo
         }
         public override string ToString()
         {
-            return "Title: " + Title + ", Description: " + Description;
+            return base.ToString() + ", Description: " + Description;
         }
 
         private string Truncate(string description)

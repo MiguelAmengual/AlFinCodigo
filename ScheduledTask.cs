@@ -1,19 +1,21 @@
 using System;
 namespace AlFinCodigo
 {
+
     public class ScheduledTask : Task
     {
 
-        public ScheduledTask(Task task, DateTime date) : base(task.Title, task.Description)
+        public ScheduledTask(string title, DateTime date) : base(title)
         {
-            if(date.Year != DateTime.Today.Year){
+            if (date.Year != DateTime.Today.Year)
+            {
                 throw new ArgumentException("The year must be the current year");
             }
             this.CreationDate = date;
 
         }
 
-        public ScheduledTask(Task task) : base(task.Title, task.Description)
+        public ScheduledTask(string title) : base(title)
         {
 
             this.CreationDate = DateTime.Today;
@@ -22,7 +24,8 @@ namespace AlFinCodigo
 
         public override string ToString()
         {
-            return "Title: " + Title + ", Description: " + Description + ", " + CreationDate.ToShortDateString();
+            return base.ToString() + ", " + CreationDate.ToShortDateString();
         }
     }
+
 }
