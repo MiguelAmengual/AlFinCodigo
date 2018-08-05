@@ -4,13 +4,13 @@ namespace AlFinCodigo
 {
     public class TaskList
     {
-        private List<Task> taskList;
+        private List<AbstractTask> taskList;
         public TaskList()
         {
-            this.taskList = new List<Task>();
+            this.taskList = new List<AbstractTask>();
         }
 
-        public void AddNewTask(Task newTask)
+        public void AddNewTask(AbstractTask newTask)
         {
             this.taskList.Add(newTask);
         }
