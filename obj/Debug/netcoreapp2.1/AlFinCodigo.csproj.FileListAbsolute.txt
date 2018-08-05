@@ -9,3 +9,14 @@ C:\dev\AlFinCodigo\obj\Debug\netcoreapp2.1\AlFinCodigo.AssemblyInfoInputs.cache
 C:\dev\AlFinCodigo\obj\Debug\netcoreapp2.1\AlFinCodigo.AssemblyInfo.cs
 C:\dev\AlFinCodigo\obj\Debug\netcoreapp2.1\AlFinCodigo.dll
 C:\dev\AlFinCodigo\obj\Debug\netcoreapp2.1\AlFinCodigo.pdb
+D:\Trabajo\AlFinCodigo\bin\Debug\netcoreapp2.1\AlFinCodigo.deps.json
+D:\Trabajo\AlFinCodigo\bin\Debug\netcoreapp2.1\AlFinCodigo.runtimeconfig.json
+D:\Trabajo\AlFinCodigo\bin\Debug\netcoreapp2.1\AlFinCodigo.runtimeconfig.dev.json
+D:\Trabajo\AlFinCodigo\bin\Debug\netcoreapp2.1\AlFinCodigo.dll
+D:\Trabajo\AlFinCodigo\bin\Debug\netcoreapp2.1\AlFinCodigo.pdb
+D:\Trabajo\AlFinCodigo\obj\Debug\netcoreapp2.1\AlFinCodigo.csprojAssemblyReference.cache
+D:\Trabajo\AlFinCodigo\obj\Debug\netcoreapp2.1\AlFinCodigo.csproj.CoreCompileInputs.cache
+D:\Trabajo\AlFinCodigo\obj\Debug\netcoreapp2.1\AlFinCodigo.AssemblyInfoInputs.cache
+D:\Trabajo\AlFinCodigo\obj\Debug\netcoreapp2.1\AlFinCodigo.AssemblyInfo.cs
+D:\Trabajo\AlFinCodigo\obj\Debug\netcoreapp2.1\AlFinCodigo.dll
+D:\Trabajo\AlFinCodigo\obj\Debug\netcoreapp2.1\AlFinCodigo.pdb
