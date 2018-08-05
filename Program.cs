@@ -6,7 +6,7 @@ namespace AlFinCodigo
     {
         static void Main(string[] args)
         {
-            OptionalTaskDescription();
+            ScheduledTaskAndNormalTaskTest();
         }
  
         public static void Test1()
@@ -41,6 +41,15 @@ namespace AlFinCodigo
         {
             Task t1 = new Task("T1");
             Console.WriteLine(t1.ToString());
+        }
+
+        public static void ScheduledTaskAndNormalTaskTest(){
+            TaskList tl1 = new TaskList();
+            tl1.AddNewTask(new ScheduledTask(new Task("t1","description 1"), DateTime.Today));
+            tl1.AddNewTask(new Task("T2","Description 2"));
+            tl1.AddNewTask(new ScheduledTask(new Task("t3","description 3")));
+            tl1.AddNewTask(new ScheduledTask(new Task("t4")));
+            tl1.PrintAllTasks();
         }
     }
 }
