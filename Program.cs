@@ -6,8 +6,7 @@ namespace AlFinCodigo
     {
         static void Main(string[] args)
         {
-
-
+            TruncateTest();
         }
 
         public static void Test1()
