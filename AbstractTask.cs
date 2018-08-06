@@ -50,20 +50,25 @@ namespace AlFinCodigo
         }
         public void PrintTags()
         {
-            foreach(TagsTasks tt in TagsList){
+            foreach (TagsTasks tt in TagsList)
+            {
 
                 Console.WriteLine(tt);
             }
 
         }
-        private bool DoesTheListHaveTheTag(TagsTasks tag)
-        {
+
+        public Boolean DoesTheTaskHaveTheTag(TagsTasks tag){
             return TagsList.Contains(tag);
         }
 
         public override string ToString()
         {
             return "Title: " + Title;
+        }
+        private bool DoesTheListHaveTheTag(TagsTasks tag)
+        {
+            return TagsList.Contains(tag);
         }
     }
 }

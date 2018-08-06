@@ -29,19 +29,16 @@ namespace AlFinCodigo
         public AbstractTask GetTaskByIndex(int index)
         {
             ArgumentException(index);
-            int indexCopy = index - 1;
-            return ToDoList[indexCopy];
+            return ToDoList[index];
         }
         public void RemoveTaskByIndex(int index)
         {
             ArgumentException(index);
-            int indexCopy = index - 1;
-            ToDoList.RemoveAt(indexCopy);
+            ToDoList.RemoveAt(index);
         }
         public bool ExistTheIndexInTheList(int index)
         {
-            int indexCopy = index - 1;
-            if (indexCopy < 0 || indexCopy > ToDoList.Count - 1)
+            if (index < 0 || index > ToDoList.Count)
             {
                 return false;
             }
@@ -57,6 +54,17 @@ namespace AlFinCodigo
             if (!ExistTheIndexInTheList(index))
             {
                 throw new System.ArgumentException("Index out of bounds");
+            }
+        }
+
+        public void RemoveTaskByTag(TagsTasks tag)
+        {
+            foreach (var task in toDoList)
+            {
+                if (task.DoesTheTaskHaveTheTag(tag))
+                {
+                    RemoveTaskByIndex(toDoList.IndexOf(task));
+                }
             }
         }
     }

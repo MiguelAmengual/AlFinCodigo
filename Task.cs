@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 namespace AlFinCodigo
 {
     public class Task : AbstractTask
@@ -9,6 +10,10 @@ namespace AlFinCodigo
             this.Description = description;
         }
 
+        public Task(string title,  List<TagsTasks> tagsList, string description = "Without Description") : base(title, tagsList)
+        {
+            this.Description = description;
+        }
         public string Description
         {
             get
