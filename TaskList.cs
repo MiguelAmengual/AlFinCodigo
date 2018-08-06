@@ -4,30 +4,48 @@ namespace AlFinCodigo
 {
     public class TaskList
     {
-        private List<AbstractTask> taskList;
+        private List<AbstractTask> toDoList;
         public TaskList()
         {
-            this.taskList = new List<AbstractTask>();
+            this.toDoList = new List<AbstractTask>();
         }
 
+        public List<AbstractTask> ToDoList{
+            get{
+                return this.toDoList;
+            }
+            set{
+                this.toDoList = value;
+            }
+        }
         public void AddNewTask(AbstractTask newTask)
         {
-            this.taskList.Add(newTask);
+            ToDoList.Add(newTask);
         }
 
-        public void RemoveTaskByIndex(int index)
+        public void GetTaskByIndex(int index)
         {
-            if (!CanTheIndexBeRemoved(index))
+            if (!ExistTheIndexInTheList(index))
             {
                 throw new System.ArgumentException("Index out of bounds");
             }
             int indexCopy = index-1;
-            this.taskList.RemoveAt(indexCopy);
+            
+            //ToDoList.;
         }
-        public bool CanTheIndexBeRemoved(int index)
+        public void RemoveTaskByIndex(int index)
+        {
+            if (!ExistTheIndexInTheList(index))
+            {
+                throw new System.ArgumentException("Index out of bounds");
+            }
+            int indexCopy = index-1;
+            ToDoList.RemoveAt(indexCopy);
+        }
+        public bool ExistTheIndexInTheList(int index)
         {
             int indexCopy = index - 1;
-            if (indexCopy < 0 || indexCopy > this.taskList.Count-1)
+            if (indexCopy < 0 || indexCopy > ToDoList.Count-1)
             {
                 return false;
             }
@@ -35,7 +53,7 @@ namespace AlFinCodigo
         }
         public void PrintAllTasks()
         {
-            this.taskList.ForEach(Console.WriteLine);
+            ToDoList.ForEach(Console.WriteLine);
         }
     }
 }

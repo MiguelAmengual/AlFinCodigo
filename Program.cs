@@ -9,6 +9,11 @@ namespace AlFinCodigo
             SeveralTasks();
         }
 
+        public static void PrintingTags(){
+            TaskList tl1 = new TaskList();
+            //tl1.ne
+
+        }
         public static void Test1()
         {
             TaskList tl1 = new TaskList();
