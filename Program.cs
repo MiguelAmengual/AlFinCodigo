@@ -6,13 +6,17 @@ namespace AlFinCodigo
     {
         static void Main(string[] args)
         {
-            SeveralTasks();
+
         }
 
-        public static void PrintingTags(){
-            TaskList tl1 = new TaskList();
-            //tl1.ne
-
+        public static void AddingRepeatedTasks()
+        {
+            Task t1 = new Task("T1", "Description 1");
+            t1.AddNewTag(TagsTasks.Daily);
+            t1.AddNewTag(TagsTasks.Weekly);
+            t1.AddNewTag(TagsTasks.Weekly);
+            t1.AddNewTag(TagsTasks.Yearly);
+            t1.PrintTags();
         }
         public static void Test1()
         {
@@ -76,9 +80,9 @@ namespace AlFinCodigo
         public static void SeveralTasks()
         {
             TaskList tl1 = new TaskList();
-            tl1.AddNewTask(new Task("T1","Description 1"));
-            tl1.AddNewTask(new PriorityTask("T1",999));
-            tl1.AddNewTask(new ScheduledTask("T3",new DateTime(2018,2,3)));
+            tl1.AddNewTask(new Task("T1", "Description 1"));
+            tl1.AddNewTask(new PriorityTask("T1", 999));
+            tl1.AddNewTask(new ScheduledTask("T3", new DateTime(2018, 2, 3)));
             tl1.AddNewTask(new ScheduledTask("T4"));
             tl1.PrintAllTasks();
         }
