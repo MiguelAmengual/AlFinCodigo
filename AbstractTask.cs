@@ -30,7 +30,7 @@ namespace AlFinCodigo
                 this.title = value;
             }
         }
-        protected List<TagsTasks> TagsList
+        public List<TagsTasks> TagsList
         {
             get
             {
@@ -41,16 +41,20 @@ namespace AlFinCodigo
                 this.tagsList = value;
             }
         }
-        protected void AddNewTag(TagsTasks newTag)
+        public void AddNewTag(TagsTasks newTag)
         {
             if (!DoesTheListHaveTheTag(newTag))
             {
                 TagsList.Add(newTag);
             }
         }
-        protected void PrintTags()
+        public void PrintTags()
         {
-            Console.WriteLine(TagsList);
+            foreach(TagsTasks tt in TagsList){
+
+                Console.WriteLine(tt);
+            }
+
         }
         private bool DoesTheListHaveTheTag(TagsTasks tag)
         {
