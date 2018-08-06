@@ -10,11 +10,14 @@ namespace AlFinCodigo
             this.toDoList = new List<AbstractTask>();
         }
 
-        public List<AbstractTask> ToDoList{
-            get{
+        public List<AbstractTask> ToDoList
+        {
+            get
+            {
                 return this.toDoList;
             }
-            set{
+            set
+            {
                 this.toDoList = value;
             }
         }
@@ -23,29 +26,22 @@ namespace AlFinCodigo
             ToDoList.Add(newTask);
         }
 
-        public void GetTaskByIndex(int index)
+        public AbstractTask GetTaskByIndex(int index)
         {
-            if (!ExistTheIndexInTheList(index))
-            {
-                throw new System.ArgumentException("Index out of bounds");
-            }
-            int indexCopy = index-1;
-            
-            //ToDoList.;
+            ArgumentException(index);
+            int indexCopy = index - 1;
+            return ToDoList[indexCopy];
         }
         public void RemoveTaskByIndex(int index)
         {
-            if (!ExistTheIndexInTheList(index))
-            {
-                throw new System.ArgumentException("Index out of bounds");
-            }
-            int indexCopy = index-1;
+            ArgumentException(index);
+            int indexCopy = index - 1;
             ToDoList.RemoveAt(indexCopy);
         }
         public bool ExistTheIndexInTheList(int index)
         {
             int indexCopy = index - 1;
-            if (indexCopy < 0 || indexCopy > ToDoList.Count-1)
+            if (indexCopy < 0 || indexCopy > ToDoList.Count - 1)
             {
                 return false;
             }
@@ -54,6 +50,14 @@ namespace AlFinCodigo
         public void PrintAllTasks()
         {
             ToDoList.ForEach(Console.WriteLine);
+        }
+
+        private void ArgumentException(int index)
+        {
+            if (!ExistTheIndexInTheList(index))
+            {
+                throw new System.ArgumentException("Index out of bounds");
+            }
         }
     }
 }
